@@ -92,4 +92,11 @@ void testMinimumZero() {
     assertTrue(actual);
 }
 
+@Test
+void testPasswordLengthExactly12() {
+    String password = "abcdefghijkl";
+    String actual = PasswordUtils.describePasswordLength(password);
+    assertEquals("long", actual);
+}
+
 }
