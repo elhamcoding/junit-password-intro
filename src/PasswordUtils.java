@@ -1,3 +1,8 @@
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.Test;
+
 /**
  * Utility class for analyzing passwords.
  */
@@ -37,6 +42,36 @@ public class PasswordUtils {
     }
 
     return true;
+}
+
+/**
+ * Checks whether a password has a character
+ * repeated at least three times in a row.
+ */
+public static boolean containsTriple(String password) {
+    
+    // TODO: Make tests first, then implement
+
+    return false;
+}
+
+/**
+ * Counts the special characters in a password.
+ */
+public static int countSpecialCharacters(String password) {
+    // TODO: Write tests before implementing
+    return 0;
+}
+
+/**
+ * Checks if a password has enough special characters.
+ */
+public static boolean hasSufficientSpecialCharacters(
+        String password, int minimum) {
+
+    // TODO: Make tests first
+    // Use countSpecialCharacters as a helper
+    return false;
 }
 
 }
