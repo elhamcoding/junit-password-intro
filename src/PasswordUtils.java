@@ -49,8 +49,15 @@ public class PasswordUtils {
  * repeated at least three times in a row.
  */
 public static boolean containsTriple(String password) {
-    
-    // TODO: Make tests first, then implement
+    for (int i = 0; i < password.length() - 2; i++) {
+        char first = password.charAt(i);
+        char second = password.charAt(i + 1);
+        char third = password.charAt(i + 2);
+
+        if (first == second && second == third) {
+            return true;
+        }
+    }
 
     return false;
 }
@@ -59,8 +66,17 @@ public static boolean containsTriple(String password) {
  * Counts the special characters in a password.
  */
 public static int countSpecialCharacters(String password) {
-    // TODO: Write tests before implementing
-    return 0;
+    int count = 0;
+
+    for (int i = 0; i < password.length(); i++) {
+        char c = password.charAt(i);
+
+        if (!Character.isLetterOrDigit(c)) {
+            count++;
+        }
+    }
+
+    return count;
 }
 
 /**
@@ -69,8 +85,12 @@ public static int countSpecialCharacters(String password) {
 public static boolean hasSufficientSpecialCharacters(
         String password, int minimum) {
 
-    // TODO: Make tests first
-    // Use countSpecialCharacters as a helper
+    int count = countSpecialCharacters(password);
+
+    if (count >= minimum) {
+        return true;
+    }
+
     return false;
 }
 
